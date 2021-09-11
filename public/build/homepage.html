@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,222 +8,313 @@
     <title>ExpressVPN-blog</title>
     <link rel="stylesheet" href="tailwind.css">
 </head>
+
 <body>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<div class="w-full py-8 text-gray-700 bg-white ">
-    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-4 md:mx-20 md:items-center md:justify-between md:flex-row ">
-        <img class="w-48" src="images/exvpn.png" alt="">
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-green-900 focus:outline-none focus:shadow-outline">
-                    <span>What is VPN?</span>
-                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute shadow-lg rounded-xl right-96 center w-max md:w-48">
-                    <div class="">
-                        <div class="absolute grid p-5 bg-white border shadow-lg left-24 py-9 rounded-xl md:grid-cols-3 w-max top-full">
-                            <ul class=" w-60">
-                                <li><a href="" class="block mx-5 my-5 text-sm font-bold text-gray-900 uppercase border-b-2 hover:text-red-600">Benefits</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                            </ul>
-                            <ul class="">
-                                <li><a href="" class="block mx-5 my-5 text-sm font-bold text-gray-900 uppercase border-b-2 hover:text-red-600">Features</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                            </ul>
-                            <ul class="mt-2">
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer mt-14 ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                                <li><a href="" class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub category</a></li>
-                            </ul>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <div class="w-full py-8 mx-4 text-gray-700 bg-white md:mx-0 ">
+        <div x-data="{ open: false }"
+            class="flex flex-col max-w-screen-xl px-4 mx-4 md:mx-20 md:items-center md:justify-between md:flex-row ">
+            <img class="w-48" src="images/exvpn.png" alt="">
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-green-900 focus:outline-none focus:shadow-outline">
+                        <span>What is VPN?</span>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95"
+                        x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75"
+                        x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute shadow-lg rounded-xl right-96 center w-max md:w-48">
+                        <div class="">
+                            <div
+                                class="absolute grid p-5 bg-white border shadow-lg left-24 py-9 rounded-xl md:grid-cols-3 w-max top-full">
+                                <ul class=" w-60">
+                                    <li><a href=""
+                                            class="block mx-5 my-5 text-sm font-bold text-gray-900 uppercase border-b-2 hover:text-red-600">Benefits</a>
+                                    </li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                </ul>
+                                <ul class="">
+                                    <li><a href=""
+                                            class="block mx-5 my-5 text-sm font-bold text-gray-900 uppercase border-b-2 hover:text-red-600">Features</a>
+                                    </li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                </ul>
+                                <ul class="mt-2">
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer mt-14 ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                    <li><a href=""
+                                            class="block p-4 text-sm font-medium text-gray-600 cursor-pointer ">Sub
+                                            category</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline"
+                    href="#">Products</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline"
+                    href="#">Support</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline"
+                    href="#">Blog</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline"
+                    href="#">My Account</a>
+                <button
+                    class="px-3 py-1 ml-8 font-medium text-green-600 border-2 border-green-600 hover:text-black hover:bg-yellow-300 hover:border-yellow-200 rounded-xl focus:outline-none ">
+                    <h1 class="">Get Started</h1>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <div class="py-2 mx-4 text-center text-gray-500 uppercase border-b-2 border-gray-200 md:mx-0">
+        <button class="px-6 focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">Latest</h1>
+        </button>
+        <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">Privacy News</h1>
+        </button>
+        <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">How to guides</h1>
+        </button>
+        <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">tips & tricks</h1>
+        </button>
+        <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">digital security lab</h1>
+        </button>
+        <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
+            <h1 class="text-sm font-medium uppercase">express vpn news</h1>
+        </button>
+    </div>
+
+    <div class="grid w-full grid-cols-2 px-4 md:px-40 bg-gray-50">
+        <div class="col-span-1 py-24">
+            <h1 class="text-6xl font-medium text-gray-700 ">ExpressVPN blog</h1>
+            <h1 class="py-3 text-gray-900">Your destination for privacy news, how-to guides, and the latest on our VPN
+            </h1>
+        </div>
+        <div class="col-span-1">
+            <!--image here-->
+        </div>
+    </div>
+
+    <div class="mx-4 mt-8 mb-3 md:mx-40 ">
+        <h1 class="text-3xl font-medium text-left text-gray-700 ">Latest Posts</h1>
+    </div>
+
+    <div
+        class="grid h-auto mx-4 my-3 transition duration-500 ease-in-out transform border shadow-md md:grid-cols-2 hover:-translate-y hover:scale-105 rounded-xl md:mx-40 border-gray-50">
+        <div class="relative col-span-1 rounded-l-xl">
+            <img class="rounded-l-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/instagram-for-kids-741x486.jpg"
+                alt="">
+        </div>
+        <div class="col-span-1 p-12">
+            <div class="inline-block px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
+                <h1 class="inline-block text-xs text-gray-900 uppercase">jamie</h1>
             </div>
-          <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline" href="#">Products</a>
-          <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline" href="#">Support</a>
-          <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline" href="#">Blog</a>
-          <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline" href="#">My Account</a>
-          <button class="px-3 py-1 ml-8 font-medium text-green-600 border-2 border-green-600 hover:text-black hover:bg-yellow-300 hover:border-yellow-200 rounded-xl focus:outline-none ">
-            <h1 class="">Get Started</h1>
-          </button>
-        </nav>
+            <div class="inline-block px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 20, 2021</h1>
+            </div>
+            <div class="inline-block px-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h1 class="inline-block text-xs text-gray-900 uppercase">3 MINS</h1>
+            </div>
+            <div class="px-3 py-6">
+                <h1 class="text-5xl font-medium text-gray-700">Is a kid-friendly Instagram possible?</h1>
+                <h1 class="mt-6 font-light text-gray-700 ">Facebook has said that an Instagram for 13 and under is on
+                    its way. But previous attempts at social media for kids leave room for skepticism.</h1>
+            </div>
+        </div>
     </div>
-</div>
-<div class="py-2 text-center text-gray-500 uppercase border-b-2 border-gray-200">
-    <button class="px-6 focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">Latest</h1>
-    </button>
-    <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">Privacy News</h1>
-    </button>
-    <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">How to guides</h1>
-    </button>
-    <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">tips & tricks</h1>
-    </button>
-    <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">digital security lab</h1>
-    </button>
-    <button class="px-6 hover:underline focus:outline-none hover:text-gray-900">
-        <h1 class="text-sm font-medium uppercase">express vpn news</h1>
-    </button>
-</div>
 
-<div class="grid w-full grid-cols-2 md:px-40 bg-gray-50">
-    <div class="col-span-1 py-24">
-        <h1 class="text-6xl font-medium text-gray-700 ">ExpressVPN blog</h1>
-        <h1 class="py-3 text-gray-900">Your destination for privacy news, how-to guides, and the latest on our VPN</h1>
+    <div class="grid gap-8 mx-4 md:grid-cols-2 md:mx-40">
+        <div
+            class="grid h-auto col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/protect-against-ddos-xbox-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">MARCUS</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 19, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">2 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="text-3xl font-medium text-gray-700">How to stop DDoS attacks on Xbox</h1>
+                    <h1 class="mt-6 font-light text-gray-700 ">Want to game in peace? Find out what’s behind the
+                        increase in gaming related DDoS attacks, and what you can do to protect your Xbox..</h1>
+                </div>
+            </div>
+        </div>
+        <div
+            class="grid h-auto col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/ioXt-expressvpn-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="text-3xl font-medium text-gray-700">ExpressVPN receives ioXt certification for security
+                    </h1>
+                    <h1 class="mt-6 font-light text-gray-700 ">Want to game in peace? </h1>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-span-1">
-        <!--image here-->
-    </div>
-</div>
 
-<div class="mt-8 mb-3 md:mx-40 ">
-    <h1 class="text-3xl font-medium text-left text-gray-700 ">Latest Posts</h1>
-</div>
-
-<div class="grid h-auto my-3 transition duration-500 ease-in-out transform border shadow-md md:grid-cols-2 hover:-translate-y hover:scale-105 rounded-xl md:mx-40 border-gray-50">
-    <div class="relative col-span-1 rounded-l-xl">
-        <img class="rounded-l-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/instagram-for-kids-741x486.jpg" alt="">
+    <div class="mx-4 mt-8 md:mx-40 ">
+        <h1 class="text-3xl font-medium text-left text-gray-700 ">Futured</h1>
     </div>
-    <div class="col-span-1 p-12">
-        <div class="inline-block px-3">
-            <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+
+    <div class="grid grid-cols-2 gap-8 mx-4 md:grid-cols-4 md:mx-40">
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_640,h_423/https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_640/https://s22908.pcdn.co/wp-content/uploads/2021/04/medical-surveillance.jpg"" alt="">
+        <div class="col-span-1 p-4 ">
+            <div class="inline-block px-3 ">
+            <svg xmlns=" http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
             </svg>
-            <h1 class="inline-block text-xs text-gray-900 uppercase">jamie</h1>
+            <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
         </div>
         <div class="inline-block px-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 20, 2021</h1>
+            <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
         </div>
         <div class="inline-block px-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <h1 class="inline-block text-xs text-gray-900 uppercase">3 MINS</h1>
+            <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
         </div>
         <div class="px-3 py-6">
-            <h1 class="text-5xl font-medium text-gray-700">Is a kid-friendly Instagram possible?</h1>
-            <h1 class="mt-6 font-light text-gray-700 ">Facebook has said that an Instagram for 13 and under is on its way. But previous attempts at social media for kids leave room for skepticism.</h1>
+            <h1 class="font-medium text-gray-700 ">ExpressVPN receives ioXt certification for security</h1>
         </div>
     </div>
-</div>
-
-<div class="grid gap-8 md:grid-cols-2 md:mx-40">
-    <div class="grid h-auto col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/protect-against-ddos-xbox-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">MARCUS</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 19, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">2 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="text-3xl font-medium text-gray-700">How to stop DDoS attacks on Xbox</h1>
-                <h1 class="mt-6 font-light text-gray-700 ">Want to game in peace? Find out what’s behind the increase in gaming related DDoS attacks, and what you can do to protect your Xbox..</h1>
-            </div>
-        </div>
     </div>
-    <div class="grid h-auto col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/ioXt-expressvpn-741x486.jpg" alt="">
+    <div
+        class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+        <img class="rounded-t-xl"
+            src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/stream-2021-oscar-nominated-movies-741x486.jpg"
+            alt="">
         <div class="col-span-1 p-4">
             <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="text-3xl font-medium text-gray-700">ExpressVPN receives ioXt certification for security</h1>
-                <h1 class="mt-6 font-light text-gray-700 ">Want to game in peace? </h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mt-8 md:mx-40 ">
-    <h1 class="text-3xl font-medium text-left text-gray-700 ">Futured</h1>
-</div>
-
-<div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:mx-40">
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_640,h_423/https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_640/https://s22908.pcdn.co/wp-content/uploads/2021/04/medical-surveillance.jpg"" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">ExpressVPN receives ioXt certification for security</h1>
-            </div>
-        </div>
-    </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/stream-2021-oscar-nominated-movies-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">MAC</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
             </div>
@@ -231,24 +323,33 @@
             </div>
         </div>
     </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_640,h_423/https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_640/https://s22908.pcdn.co/wp-content/uploads/2016/09/Onion-websites-from-the-depths-of-the-dark-web-2.png" alt="">
+    <div
+        class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+        <img class="rounded-t-xl"
+            src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_640,h_423/https://cdn.shortpixel.ai/client/q_lossy,ret_img,w_640/https://s22908.pcdn.co/wp-content/uploads/2016/09/Onion-websites-from-the-depths-of-the-dark-web-2.png"
+            alt="">
         <div class="col-span-1 p-4">
             <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">LEXIE</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
             </div>
@@ -257,24 +358,33 @@
             </div>
         </div>
     </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/captcha-types-741x486.jpg" alt="">
+    <div
+        class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+        <img class="rounded-t-xl"
+            src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/captcha-types-741x486.jpg"
+            alt="">
         <div class="col-span-1 p-4">
             <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">ATIKA</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
             </div>
             <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
             </div>
@@ -283,311 +393,401 @@
             </div>
         </div>
     </div>
-</div>
-<div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:mx-40">
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/03/privacy-workplace-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
+    </div>
+    <div class="grid grid-cols-2 gap-8 mx-4 md:grid-cols-4 md:mx-40">
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/03/privacy-workplace-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Back to the office? 7 tips to protect your privacy</h1>
+                </div>
             </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/qr-codes-security-risks-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">MAC</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Are QR codes safe? Not always</h1>
+                </div>
             </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/google-floc-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">LEXIE</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Google’s tracking cookies are going away</h1>
+                </div>
             </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Back to the office? 7 tips to protect your privacy</h1>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/03/facebook-hardware-products-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">ATIKA</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Facebook wearables are coming</h1>
+                </div>
             </div>
         </div>
     </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/qr-codes-security-risks-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">MAC</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Are QR codes safe? Not always</h1>
-            </div>
-        </div>
-    </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/google-floc-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">LEXIE</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Google’s tracking cookies are going away</h1>
-            </div>
-        </div>
-    </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/03/facebook-hardware-products-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">ATIKA</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Facebook wearables are coming</h1>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="mt-8 md:mx-40 ">
-    <h1 class="text-3xl font-medium text-left text-gray-700 ">ExpressVPN news</h1>
-</div>
+    <div class="mx-4 mt-8 md:mx-40 ">
+        <h1 class="text-3xl font-medium text-left text-gray-700 ">ExpressVPN news</h1>
+    </div>
 
-<div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:mx-40">
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/ioXt-expressvpn-741x486.jpg" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
+    <div class="grid grid-cols-2 gap-8 mx-4 md:grid-cols-4 md:mx-40">
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/04/ioXt-expressvpn-741x486.jpg"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">PENNY</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">ExpressVPN receives ioXt certification for security</h1>
+                </div>
             </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/02/Lightway-blog-image-741x486.png"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">MAC</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Dev blog: A look inside Lightway</h1>
+                </div>
             </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/01/Hero-1-741x486.png"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">LEXIE</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">Designing the future of ExpressVPN</h1>
+                </div>
             </div>
+        </div>
+        <div
+            class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
+            <img class="rounded-t-xl"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/01/ff-launch-blog-image@2x-741x486.png"
+                alt="">
+            <div class="col-span-1 p-4">
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">ATIKA</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
+                </div>
+                <div class="inline-block px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
+                </div>
+                <div class="px-3 py-6">
+                    <h1 class="font-medium text-gray-700 ">A new era for ExpressVPN<br><br></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mx-4 mt-8 mb-3 md:mx-40 ">
+        <h1 class="text-3xl font-medium text-left text-gray-700 ">Futured Video</h1>
+    </div>
+
+    <div
+        class="grid h-auto mx-4 my-3 transition duration-500 ease-in-out transform border shadow-md md:grid-cols-2 hover:-translate-y hover:scale-105 rounded-xl md:mx-40 border-gray-50">
+        <div class="relative " style="padding-top: 56.25%">
+            <iframe src="https://www.youtube.com/watch?v=XJlTgLXvnaw&t=1s"
+                class="absolute inset-0 w-full h-full rounded-l-xl " frameborder="0" …></iframe>
+        </div>
+        <div class="col-span-1 p-12">
             <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">ExpressVPN receives ioXt certification for security</h1>
+                <h1 class="text-4xl font-medium text-gray-700">We analyzed 450 apps and found location trackers in every
+                    one</h1>
+                <h1 class="mt-6 font-light text-gray-700 ">Original research from the ExpressVPN Digital Security Lab
+                    reveals the extent of location surveillance.</h1>
             </div>
         </div>
     </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/02/Lightway-blog-image-741x486.png" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">MAC</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Dev blog: A look inside Lightway</h1>
-            </div>
-        </div>
-    </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/01/Hero-1-741x486.png" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">LEXIE</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">Designing the future of ExpressVPN</h1>
-            </div>
-        </div>
-    </div>
-    <div class="grid col-span-1 my-3 transition duration-500 ease-in-out transform border shadow-md h-84 hover:-translate-y hover:scale-105 rounded-xl border-gray-50">
-        <img class="rounded-t-xl" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_741,h_486/https://s22908.pcdn.co/wp-content/uploads/2021/01/ff-launch-blog-image@2x-741x486.png" alt="">
-        <div class="col-span-1 p-4">
-            <div class="inline-block px-3">
-                <svg  xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">ATIKA</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">APRIL 15, 2021</h1>
-            </div>
-            <div class="inline-block px-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h1 class="inline-block text-xs text-gray-900 uppercase">1 MINS</h1>
-            </div>
-            <div class="px-3 py-6">
-                <h1 class="font-medium text-gray-700 ">A new era for ExpressVPN<br><br></h1>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="mt-8 mb-3 md:mx-40 ">
-    <h1 class="text-3xl font-medium text-left text-gray-700 ">Futured Video</h1>
-</div>
-
-<div class="grid h-auto my-3 transition duration-500 ease-in-out transform border shadow-md md:grid-cols-2 hover:-translate-y hover:scale-105 rounded-xl md:mx-40 border-gray-50">
-    <div class="relative " style="padding-top: 56.25%">
-        <iframe src="https://www.youtube.com/watch?v=XJlTgLXvnaw&t=1s" class="absolute inset-0 w-full h-full rounded-l-xl " frameborder="0" …></iframe>
-      </div>
-    <div class="col-span-1 p-12">
-        <div class="px-3 py-6">
-            <h1 class="text-4xl font-medium text-gray-700">We analyzed 450 apps and found location trackers in every one</h1>
-            <h1 class="mt-6 font-light text-gray-700 ">Original research from the ExpressVPN Digital Security Lab reveals the extent of location surveillance.</h1>
+    <div class="mt-32 mb-3 md:mx-40 ">
+        <h1 class="text-4xl font-medium text-center text-gray-700 ">ExpressVPN is proudly supporting</h1>
+        <div class="items-center mx-auto md:absolute md:flex md:px-16">
+            <img class="inline-block w-24 px-4 pt-8"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_1.png"
+                alt="">
+            <img class="inline-block w-56 px-4 pt-8"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_2.png"
+                alt="">
+            <img class="inline-block w-56 px-4 pt-8"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_3.png"
+                alt="">
+            <img class="inline-block w-56 px-4 pt-8"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_4.png"
+                alt="">
+            <img class="inline-block w-56 px-4 pt-8"
+                src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_5.png"
+                alt="">
         </div>
     </div>
-</div>
 
-<div class="mt-32 mb-3 md:mx-40 ">
-    <h1 class="text-4xl font-medium text-center text-gray-700 ">ExpressVPN is proudly supporting</h1>
-    <div class="items-center mx-auto md:absolute md:flex md:px-16">
-        <img class="inline-block w-24 px-4 pt-8" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_1.png" alt="">
-        <img class="inline-block w-56 px-4 pt-8" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_2.png" alt="">
-        <img class="inline-block w-56 px-4 pt-8" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_3.png" alt="">
-        <img class="inline-block w-56 px-4 pt-8" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_4.png" alt="">
-        <img class="inline-block w-56 px-4 pt-8" src="https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img/https://s22908.pcdn.co/wp-content/themes/newspaper-child/images/proudly/logo_5.png" alt="">
-    </div>
-</div>
-
-<div class="relative w-full mt-32 bg-green-600">
-    <div class="py-24 rounded-r-full bg-gradient-to-r from-green-600 to-yellow-400 md:mr-96 abosulute">
-        <h1 class="text-5xl text-white md:pl-40">Subscribe to the blog</h1>
-        <h1 class="pb-8 text-white md:pl-40">Get a digest of ExpressVPN’s best blog posts delivered to your inbox.</h1>
-        <div class="md:pl-40">
-            <input class="inline-block px-4 py-4 rounded-lg w-80 focus:outline-none " placeholder="Email address">
-            <button class="inline-block px-6 py-4 ml-6 font-bold text-white bg-transparent border-2 border-white hover:bg-yellow-300 hover:text-gray-700 rounded-xl focus:outline-none " type="text">
-                <h1>Submit</h1>
-            </button>
+    <div class="relative w-full px-4 mt-32 bg-green-600 md:px-0">
+        <div class="py-24 rounded-r-full bg-gradient-to-r from-green-600 to-yellow-400 md:mr-96 abosulute">
+            <h1 class="text-5xl text-white md:pl-40">Subscribe to the blog</h1>
+            <h1 class="pb-8 text-white md:pl-40">Get a digest of ExpressVPN’s best blog posts delivered to your inbox.
+            </h1>
+            <div class="md:pl-40">
+                <input class="inline-block px-4 py-4 rounded-lg w-80 focus:outline-none " placeholder="Email address">
+                <button
+                    class="inline-block px-6 py-4 ml-6 font-bold text-white bg-transparent border-2 border-white hover:bg-yellow-300 hover:text-gray-700 rounded-xl focus:outline-none "
+                    type="text">
+                    <h1>Submit</h1>
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="grid w-full grid-cols-2 gap-12 py-20 bg-gray-900 md:grid-cols-4 md:px-40">
-    <div class="col-span-1">
-        <h1 class="pb-4 text-lg text-gray-400">Products</h1>
-        <ul>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Mac</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Windows</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for iPhone and iPad</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Android</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Linux</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Routers</li>
-        </ul>
+    <div class="grid w-full grid-cols-2 gap-12 px-4 py-20 bg-gray-900 md:px-0 md:grid-cols-4 md:px-40">
+        <div class="col-span-1">
+            <h1 class="pb-4 text-lg text-gray-400">Products</h1>
+            <ul>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Mac</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Windows</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for iPhone and iPad</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Android</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Linux</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN for Routers</li>
+            </ul>
+        </div>
+        <div class="col-span-1">
+            <h1 class="pb-4 text-lg text-gray-400">Learn More</h1>
+            <ul>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">What Is a VPN?</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Top 5 VPN Uses</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">How-To Privacy Guides</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Stream Live Events</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Stream Sports</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Blog</li>
+            </ul>
+        </div>
+        <div class="col-span-1">
+            <h1 class="pb-4 text-lg text-gray-400">About ExpressVPN</h1>
+            <ul>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Plans and Pricing</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Features</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Press</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Careers</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Privacy Policy</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Trust</li>
+            </ul>
+        </div>
+        <div class="col-span-1">
+            <h1 class="pb-4 text-lg text-gray-400">Help</h1>
+            <ul>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Support Center</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN Setup Tutorials</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">FAQ</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Terms of Service</li>
+                <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Contact Us</li>
+            </ul>
+        </div>
+
     </div>
-    <div class="col-span-1">
-        <h1 class="pb-4 text-lg text-gray-400">Learn More</h1>
-        <ul>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">What Is a VPN?</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Top 5 VPN Uses</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">How-To Privacy Guides</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Stream Live Events</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Stream Sports</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Blog</li>
-        </ul>
-    </div>
-    <div class="col-span-1">
-        <h1 class="pb-4 text-lg text-gray-400">About ExpressVPN</h1>
-        <ul>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Plans and Pricing</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Features</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Press</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Careers</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Privacy Policy</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Trust</li>
-        </ul>
-    </div>
-    <div class="col-span-1">
-        <h1 class="pb-4 text-lg text-gray-400">Help</h1>
-        <ul>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Support Center</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">VPN Setup Tutorials</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">FAQ</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Terms of Service</li>
-            <li class="py-2 text-sm text-gray-400 hover:text-yellow-400 ">Contact Us</li>
-        </ul>
-    </div>
-    
-</div>
 
 </body>
+
 </html>
